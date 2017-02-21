@@ -17,10 +17,10 @@ namespace EndToEndMailCourse._01
             string value = "";
             IWebElement element = null;
 
-            #region TEST CODE
-
-            #endregion
-
+            
+            element = driver.FindElement(By.Name("firstName"));
+            value = element.GetAttribute("value");
+            
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
             Assert.AreEqual(value, "Terry");
@@ -36,9 +36,8 @@ namespace EndToEndMailCourse._01
             string value = "";
             IWebElement element = null;
 
-            #region TEST CODE
-
-            #endregion
+            element = driver.FindElement(By.Name("lastName"));
+            value = element.GetAttribute("value");
 
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
@@ -55,9 +54,8 @@ namespace EndToEndMailCourse._01
             string value = "";
             IWebElement element = null;
 
-            #region TEST CODE
-
-            #endregion
+            element = driver.FindElement(By.Name("country"));
+            value = element.GetAttribute("value");
 
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
@@ -74,9 +72,8 @@ namespace EndToEndMailCourse._01
             bool value = true;
             IWebElement element = null;
 
-            #region TEST CODE
-
-            #endregion
+            element = driver.FindElementById("isActive");
+            value = element.Equals("false");
 
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
@@ -94,9 +91,8 @@ namespace EndToEndMailCourse._01
             string value = "";
             IWebElement element = null;
 
-            #region TEST CODE
-
-            #endregion
+            element = driver.FindElementById("commentInput");
+            value = element.Text;
 
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
@@ -112,9 +108,7 @@ namespace EndToEndMailCourse._01
             driver.Navigate().GoToUrl(testUrl);
             IWebElement element = null;
 
-            #region TEST CODE
-
-            #endregion
+            element = driver.FindElementByLinkText("Details");
 
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
@@ -131,9 +125,7 @@ namespace EndToEndMailCourse._01
 
             IWebElement element = null;
 
-            #region TEST CODE
-
-            #endregion
+            element = driver.FindElementByLinkText("List of books");
 
             Assert.IsNotNull(element);
             Assert.IsTrue(element is IWebElement);
