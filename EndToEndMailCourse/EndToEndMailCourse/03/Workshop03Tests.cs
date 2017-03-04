@@ -19,9 +19,7 @@ namespace EndToEndMailCourse._03
    
             IWebElement book = null;
 
-            #region TEST CODE
-
-            #endregion
+            book = driver.FindElement(By.XPath("/html/body/div/div[2]/div/div/ul/li[4]/h4[1]"));
 
             Assert.NotNull(book);
             Assert.AreEqual(book.TagName, "h4");
@@ -38,10 +36,8 @@ namespace EndToEndMailCourse._03
 
             IReadOnlyCollection<IWebElement> books = null;
 
-            #region TEST CODE
-
-            #endregion
-
+            books = driver.FindElements(By.CssSelector(".list-group > .list-group-item.book"));
+            
             Assert.NotNull(books);
             Assert.AreEqual(books.Count, 6);
             Assert.IsTrue(books.All(x => x.TagName == "li"));
@@ -56,9 +52,9 @@ namespace EndToEndMailCourse._03
 
             IReadOnlyCollection<IWebElement> links = null;
 
-            #region TEST CODE
-
-            #endregion
+            links = driver.FindElements(By.CssSelector(".list-group > .book .btn.btn-default"));
+            //links = driver.FindElements(By.LinkText("Details"));
+            //links = driver.FindElementsByXPath("/html/body/div/div/div/div/ul/li/h4/a");
 
             Assert.NotNull(links);
             Assert.AreEqual(links.Count, 6);
