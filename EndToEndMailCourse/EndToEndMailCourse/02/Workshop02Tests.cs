@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.Events;
 
 namespace EndToEndMailCourse._02
 {
@@ -19,7 +20,17 @@ namespace EndToEndMailCourse._02
             IWebElement nameResult = null,
                 commentResult = null;
 
-            #region TEST CODE
+            #region
+
+            var taskNameInput = driver.FindElement(By.Id("taskNameInput"));
+            taskNameInput.SendKeys(name);
+
+            var navigateButton = driver.FindElement(By.Id("showDetailsButton"));
+            navigateButton.Click();
+
+            var taskNCommentInput = driver.FindElement(By.Id("commentInput"));
+            taskNCommentInput.SendKeys(comment);
+            taskNCommentInput.SendKeys(Keys.Enter);
 
             #endregion
 
